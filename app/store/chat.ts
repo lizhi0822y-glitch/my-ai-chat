@@ -137,8 +137,8 @@ function getSummarizeModel(
     );
     if (summarizeModel) {
       return [
-        summarizeModel.name,
-        summarizeModel.provider?.providerName as string,
+        "gpt-4o-mini",
+        ServiceProvider.OpenAI,
       ];
     }
   }
