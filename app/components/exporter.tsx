@@ -212,20 +212,19 @@ export function MessageExporter() {
             subTitle={Locale.Export.Format.SubTitle}
           >
             <Select
-              value={exportConfig.format}
-              onChange={(e) =>
-                updateExportConfig(
-                  (config) =>
-                    (config.format = e.currentTarget.value as ExportFormat),
-                )
-              }
-            >
-              {formats.map((f) => (
-                <option key={f} value={f}>
-                  {f}
-                </option>
-              ))}
-            </Select>
+         value={exportConfig.format}
+         onChange={(e) => {
+           updateExportConfig((config) => {
+             config.format = e.currentTarget.value as any;
+           });
+         }}
+       >
+         {formats.map((f) => (
+            <option key={f} value={f}>
+              {f === "text" ? "Markdown 文本" : f === "image" ? "生成图片" : "JSON 数据"}
+            </option>
+         ))}
+       </Select>
           </ListItem>
           <ListItem
             title={Locale.Export.IncludeContext.Title}
