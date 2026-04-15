@@ -87,7 +87,7 @@ const cn = {
     StopSpeak: "停止",
     Config: {
       Reset: "清除记忆",
-      SaveAs: "存为面具",
+      SaveAs: "存入角色库",
     },
     IsContext: "预设提示词",
     ShortcutKey: {
