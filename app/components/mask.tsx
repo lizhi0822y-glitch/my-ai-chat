@@ -103,14 +103,7 @@ export function MaskConfig(props: {
 
   return (
     <>
-      <ContextPrompts
-        context={props.mask.context}
-        updateContext={(updater) => {
-          const context = props.mask.context.slice();
-          updater(context);
-          props.updateMask((mask) => (mask.context = context));
-        }}
-      />
+      
 
       <List>
         <ListItem title={Locale.Mask.Config.Avatar}>
@@ -151,70 +144,7 @@ export function MaskConfig(props: {
             }
           ></input>
         </ListItem>
-        <ListItem
-          title={Locale.Mask.Config.HideContext.Title}
-          subTitle={Locale.Mask.Config.HideContext.SubTitle}
-        >
-          <input
-            aria-label={Locale.Mask.Config.HideContext.Title}
-            type="checkbox"
-            checked={props.mask.hideContext}
-            onChange={(e) => {
-              props.updateMask((mask) => {
-                mask.hideContext = e.currentTarget.checked;
-              });
-            }}
-          ></input>
-        </ListItem>
-
-        {globalConfig.enableArtifacts && (
-          <ListItem
-            title={Locale.Mask.Config.Artifacts.Title}
-            subTitle={Locale.Mask.Config.Artifacts.SubTitle}
-          >
-            <input
-              aria-label={Locale.Mask.Config.Artifacts.Title}
-              type="checkbox"
-              checked={props.mask.enableArtifacts !== false}
-              onChange={(e) => {
-                props.updateMask((mask) => {
-                  mask.enableArtifacts = e.currentTarget.checked;
-                });
-              }}
-            ></input>
-          </ListItem>
-        )}
-        {globalConfig.enableCodeFold && (
-          <ListItem
-            title={Locale.Mask.Config.CodeFold.Title}
-            subTitle={Locale.Mask.Config.CodeFold.SubTitle}
-          >
-            <input
-              aria-label={Locale.Mask.Config.CodeFold.Title}
-              type="checkbox"
-              checked={props.mask.enableCodeFold !== false}
-              onChange={(e) => {
-                props.updateMask((mask) => {
-                  mask.enableCodeFold = e.currentTarget.checked;
-                });
-              }}
-            ></input>
-          </ListItem>
-        )}
-
-        {!props.shouldSyncFromGlobal ? (
-          <ListItem
-            title={Locale.Mask.Config.Share.Title}
-            subTitle={Locale.Mask.Config.Share.SubTitle}
-          >
-            <IconButton
-              aria={Locale.Mask.Config.Share.Title}
-              icon={<CopyIcon />}
-              text={Locale.Mask.Config.Share.Action}
-              onClick={copyMaskLink}
-            />
-          </ListItem>
-        ) : null}
+        
 
         {props.shouldSyncFromGlobal ? (
           <ListItem
@@ -247,10 +177,7 @@ export function MaskConfig(props: {
       </List>
 
       <List>
-        <ModelConfigList
-          modelConfig={{ ...props.mask.modelConfig }}
-          updateConfig={updateConfig}
-        />
+        
         {props.extraListItems}
       </List>
     </>
