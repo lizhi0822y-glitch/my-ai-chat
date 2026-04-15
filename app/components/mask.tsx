@@ -149,10 +149,7 @@ export function MaskConfig(props: {
         
       </List>
 
-      <List>
-        
-        {props.extraListItems}
-      </List>
+      
     </>
   );
 }
