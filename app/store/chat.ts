@@ -143,7 +143,7 @@ function getSummarizeModel(
     }
   }
   if (currentModel.startsWith("gemini")) {
-    return [GEMINI_SUMMARIZE_MODEL, ServiceProvider.Google];
+    return ["gpt-4o-mini", ServiceProvider.OpenAI];
   } else if (currentModel.startsWith("deepseek-")) {
     return [DEEPSEEK_SUMMARIZE_MODEL, ServiceProvider.DeepSeek];
   }
