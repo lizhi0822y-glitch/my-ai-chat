@@ -12,14 +12,13 @@ const cn = {
   Auth: {
     Return: "返回",
     Title: "需要密码",
-    Tips: "管理员开启了密码验证，请在下方填入访问码",
-    SubTips: "或者输入你的 OpenAI 或 Google AI 密钥",
-    Input: "在此处填写访问码",
+    Tips: "请输入您的专属访问码",
+    SubTips: "",
+    Input: "在此填写",
     Confirm: "确认",
-    Later: "稍后再说",
-    SaasTips: "配置太麻烦，想要立即使用",
-    TopTips:
-      "🥳 NextChat AI 首发优惠，立刻解锁 OpenAI o1, GPT-4o, Claude-3.5 等最新大模型",
+    Later: "",
+    SaasTips: "",
+    TopTips: "",
   },
   ChatItem: {
     ChatItemCount: (count: number) => `${count} 条对话`,
