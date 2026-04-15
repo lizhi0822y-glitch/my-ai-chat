@@ -146,34 +146,7 @@ export function MaskConfig(props: {
         </ListItem>
         
 
-        {props.shouldSyncFromGlobal ? (
-          <ListItem
-            title={Locale.Mask.Config.Sync.Title}
-            subTitle={Locale.Mask.Config.Sync.SubTitle}
-          >
-            <input
-              aria-label={Locale.Mask.Config.Sync.Title}
-              type="checkbox"
-              checked={props.mask.syncGlobalConfig}
-              onChange={async (e) => {
-                const checked = e.currentTarget.checked;
-                if (
-                  checked &&
-                  (await showConfirm(Locale.Mask.Config.Sync.Confirm))
-                ) {
-                  props.updateMask((mask) => {
-                    mask.syncGlobalConfig = checked;
-                    mask.modelConfig = { ...globalConfig.modelConfig };
-                  });
-                } else if (!checked) {
-                  props.updateMask((mask) => {
-                    mask.syncGlobalConfig = checked;
-                  });
-                }
-              }}
-            ></input>
-          </ListItem>
-        ) : null}
+        
       </List>
 
       <List>
