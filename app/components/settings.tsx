@@ -612,9 +612,7 @@ export function Settings() {
   const clientConfig = useMemo(() => getClientConfig(), []);
   const showAccessCode = enabledAccessControl && !clientConfig?.isApp;
 
-  const accessCodeComponent = showAccessCode && (
-    
-  );
+  const accessCodeComponent = null;
 
   const saasStartComponent = (
     <ListItem
