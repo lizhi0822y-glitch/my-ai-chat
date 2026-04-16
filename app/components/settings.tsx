@@ -1516,57 +1516,7 @@ export function Settings() {
             </Popover>
           </ListItem>
 
-          <ListItem
-            title={Locale.Settings.Update.Version(currentVersion ?? "unknown")}
-            subTitle={
-              checkingUpdate
-                ? Locale.Settings.Update.IsChecking
-                : hasNewVersion
-                ? Locale.Settings.Update.FoundUpdate(remoteId ?? "ERROR")
-                : Locale.Settings.Update.IsLatest
-            }
-          >
-            {checkingUpdate ? (
-              <LoadingIcon />
-            ) : hasNewVersion ? (
-              clientConfig?.isApp ? (
-                <IconButton
-                  icon={<ResetIcon></ResetIcon>}
-                  text={Locale.Settings.Update.GoToUpdate}
-                  onClick={() => clientUpdate()}
-                />
-              ) : (
-                <Link href={updateUrl} target="_blank" className="link">
-                  {Locale.Settings.Update.GoToUpdate}
-                </Link>
-              )
-            ) : (
-              <IconButton
-                icon={<ResetIcon></ResetIcon>}
-                text={Locale.Settings.Update.CheckUpdate}
-                onClick={() => checkUpdate(true)}
-              />
-            )}
-          </ListItem>
-
-          <ListItem title={Locale.Settings.SendKey}>
-            <Select
-              aria-label={Locale.Settings.SendKey}
-              value={config.submitKey}
-              onChange={(e) => {
-                updateConfig(
-                  (config) =>
-                    (config.submitKey = e.target.value as any as SubmitKey),
-                );
-              }}
-            >
-              {Object.values(SubmitKey).map((v) => (
-                <option value={v} key={v}>
-                  {v}
-                </option>
-              ))}
-            </Select>
-          </ListItem>
+          
 
           <ListItem title={Locale.Settings.Theme}>
             <Select
@@ -1622,22 +1572,7 @@ export function Settings() {
             ></InputRange>
           </ListItem>
 
-          <ListItem
-            title={Locale.Settings.FontFamily.Title}
-            subTitle={Locale.Settings.FontFamily.SubTitle}
-          >
-            <input
-              aria-label={Locale.Settings.FontFamily.Title}
-              type="text"
-              value={config.fontFamily}
-              placeholder={Locale.Settings.FontFamily.Placeholder}
-              onChange={(e) =>
-                updateConfig(
-                  (config) => (config.fontFamily = e.currentTarget.value),
-                )
-              }
-            ></input>
-          </ListItem>
+          
 
           <ListItem
             title={Locale.Settings.AutoGenerateTitle.Title}
@@ -1656,22 +1591,7 @@ export function Settings() {
             ></input>
           </ListItem>
 
-          <ListItem
-            title={Locale.Settings.SendPreviewBubble.Title}
-            subTitle={Locale.Settings.SendPreviewBubble.SubTitle}
-          >
-            <input
-              aria-label={Locale.Settings.SendPreviewBubble.Title}
-              type="checkbox"
-              checked={config.sendPreviewBubble}
-              onChange={(e) =>
-                updateConfig(
-                  (config) =>
-                    (config.sendPreviewBubble = e.currentTarget.checked),
-                )
-              }
-            ></input>
-          </ListItem>
+          
 
           <ListItem
             title={Locale.Mask.Config.Artifacts.Title}
