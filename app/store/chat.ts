@@ -645,13 +645,8 @@ export const useChatStore = createPersistStore(
           return;
         }
 
-        // if not config compressModel, then using getSummarizeModel
-        const [model, providerName] = modelConfig.compressModel
-          ? [modelConfig.compressModel, modelConfig.compressProviderName]
-          : getSummarizeModel(
-              session.mask.modelConfig.model,
-              session.mask.modelConfig.providerName,
-            );
+        const model = session.mask.modelConfig.model;
+        const providerName = session.mask.modelConfig.providerName;
         const api: ClientApi = getClientApi(providerName as ServiceProvider);
 
         // remove error messages if any
@@ -684,7 +679,7 @@ export const useChatStore = createPersistStore(
             messages: topicMessages,
             config: {
               model,
-              stream: false,
+              stream: true,
               providerName,
             },
             onFinish(message, responseRes) {
