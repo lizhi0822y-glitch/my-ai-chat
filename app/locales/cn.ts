@@ -622,7 +622,7 @@ const cn = {
   },
   Store: {
     DefaultTopic: "新的聊天",
-    BotHello: "罗婉歌小姐，我是你的专属 AI 助理，请点击[这里](/#/auth)输入访问密钥",
+    BotHello: "我是你的专属Ai助手，有什么可以帮您吗？",
     Error: "出错了，稍后重试吧",
     Prompt: {
       History: (content: string) => "这是历史聊天总结作为前情提要：" + content,
