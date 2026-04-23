@@ -7,7 +7,7 @@ const isApp = !!getClientConfig()?.isApp;
 const cn = {
   WIP: "该功能仍在开发中……",
   Error: {
-    Unauthorized: "罗婉歌小姐，我是你的专属 AI 助理，请点击[这里](/#/auth)输入访问密钥",
+    Unauthorized: "郭澄同学，我是你的专属 AI 助理，请点击[这里](/#/auth)输入访问密钥",
   },
   Auth: {
     Return: "返回",
